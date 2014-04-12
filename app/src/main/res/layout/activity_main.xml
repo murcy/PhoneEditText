@@ -1,0 +1,36 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="@dimen/activity_padding"
+                tools:context="com.yellowballstudio.phoneedittext.app.MainActivity">
+
+    <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/tv_enter_number"
+            android:layout_above="@+id/et_phone"
+            android:layout_marginBottom="5dp"
+            android:textSize="16sp"/>
+
+    <com.yellowballstudio.phoneedittext.app.PhoneEditText
+            android:id="@+id/et_phone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/tv_center"
+            android:inputType="phone"/>
+
+    <TextView
+            android:id="@+id/tv_center"
+            android:layout_width="1px"
+            android:layout_height="1px"
+            android:layout_centerInParent="true"/>
+
+    <Button
+            android:id="@+id/btn_send"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/btn_send"
+            android:layout_below="@+id/tv_center"/>
+
+</RelativeLayout>
