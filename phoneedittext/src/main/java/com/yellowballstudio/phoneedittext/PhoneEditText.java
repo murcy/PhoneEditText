@@ -42,7 +42,7 @@ public class PhoneEditText extends EditText implements TextWatcher, OnFocusChang
     public void afterTextChanged(Editable s) {
         if (s.length() == 0) {
             mUpdated = false;
-            getHintEditText();
+            getHint();
             return;
         }
         if (mUpdated) {
@@ -53,7 +53,7 @@ public class PhoneEditText extends EditText implements TextWatcher, OnFocusChang
         if (number.length() > MAX_LENGTH) {
             number = new String(number.substring(0, MAX_LENGTH));
         } else if (number.length() == 0) {
-            getHintEditText();
+            getHint();
         }
         mUpdated = !mUpdated;
         int length = number.length();
@@ -110,19 +110,11 @@ public class PhoneEditText extends EditText implements TextWatcher, OnFocusChang
         if (isEnabled()) {
             String text = getText().toString();
             if (hasFocus && text.length() == MIN_LENGTH) {
-                getHintEditText();
+                getHint();
             } else if (text.length() == (PART1_LEN + 1)) {
                 setText(EMPTY);
             }
         }
-    }
-
-    public void setHintEditText(int hint) {
-        setHint(hint);
-    }
-
-    private void getHintEditText() {
-        getHint().toString();
     }
 
 }

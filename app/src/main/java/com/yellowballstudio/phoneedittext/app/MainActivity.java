@@ -27,7 +27,7 @@ public class MainActivity extends ActionBarActivity {
         imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
 
         mPhone = (PhoneEditText) findViewById(R.id.et_phone);
-        mPhone.setHintEditText(R.string.hint);
+        mPhone.setHint(R.string.hint);
         showKeyboard(true);
 
         mSend = (Button) findViewById(R.id.btn_send);
