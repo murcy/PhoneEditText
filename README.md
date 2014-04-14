@@ -6,7 +6,7 @@ PhoneEditText
 ## How to use
 Add a `PhoneEditText` to your layout:
 ```xml
-<com.package.PhoneEditText
+<com.yellowballstudio.phoneedittext.PhoneEditText
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:inputType="phone"/>
