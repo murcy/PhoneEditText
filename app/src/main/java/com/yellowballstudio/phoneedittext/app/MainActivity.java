@@ -1,5 +1,7 @@
 package com.yellowballstudio.phoneedittext.app;
 
+import com.yellowballstudio.phoneedittext.PhoneEditText;
+
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.os.AsyncTask;
@@ -25,6 +27,7 @@ public class MainActivity extends ActionBarActivity {
         imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
 
         mPhone = (PhoneEditText) findViewById(R.id.et_phone);
+        mPhone.setHintEditText(R.string.hint);
         showKeyboard(true);
 
         mSend = (Button) findViewById(R.id.btn_send);

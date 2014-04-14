@@ -1,4 +1,4 @@
-package com.yellowballstudio.phoneedittext.app;
+package com.yellowballstudio.phoneedittext;
 
 import android.content.Context;
 import android.text.Editable;
@@ -42,7 +42,7 @@ public class PhoneEditText extends EditText implements TextWatcher, OnFocusChang
     public void afterTextChanged(Editable s) {
         if (s.length() == 0) {
             mUpdated = false;
-            setHint(R.string.et_phone_hint);
+            getHintEditText();
             return;
         }
         if (mUpdated) {
@@ -53,7 +53,7 @@ public class PhoneEditText extends EditText implements TextWatcher, OnFocusChang
         if (number.length() > MAX_LENGTH) {
             number = new String(number.substring(0, MAX_LENGTH));
         } else if (number.length() == 0) {
-            setHint(R.string.et_phone_hint);
+            getHintEditText();
         }
         mUpdated = !mUpdated;
         int length = number.length();
@@ -110,11 +110,19 @@ public class PhoneEditText extends EditText implements TextWatcher, OnFocusChang
         if (isEnabled()) {
             String text = getText().toString();
             if (hasFocus && text.length() == MIN_LENGTH) {
-                setHint(R.string.et_phone_hint);
+                getHintEditText();
             } else if (text.length() == (PART1_LEN + 1)) {
                 setText(EMPTY);
             }
         }
+    }
+
+    public void setHintEditText(int hint) {
+        setHint(hint);
+    }
+
+    private void getHintEditText() {
+        getHint().toString();
     }
 
 }
